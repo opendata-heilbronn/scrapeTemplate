@@ -37,11 +37,11 @@ request(url, function (error, response, body) {
             "channelId" : channelId,
             "title" : title,
             "link" : url,
-            "pubDate" : published,
+            "pubDate" : uhrzeit,
             "content" : text.html()
         }
 
-        request.post({'url':'https://api.grundid.de/rss/item', 'json':send},
+        request.put({'url':'https://api.grundid.de/rss/item', 'json':send},
             function(error, response, body){
                 console.log(body);
             }
